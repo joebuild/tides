@@ -1,0 +1,25 @@
+{
+    "scripts": {
+        "build": "yarn build:program && yarn build:app",
+        "build:app": "cd ./app && yarn build",
+        "build:program": "anchor build && cp ./target/types/tides.ts ./app/src/idl/tides.ts && cp ./target/idl/tides.json ./app/src/idl/tides.json",
+        "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+        "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+        "test": "yarn build && yarn install --check-files && anchor test"
+    },
+    "dependencies": {
+        "@project-serum/anchor": "^0.25.0",
+        "@solana/spl-token": "^0.2.0",
+        "@solana/web3.js": "^1.50.1"
+    },
+    "devDependencies": {
+        "@types/bn.js": "^5.1.0",
+        "@types/chai": "^4.3.0",
+        "@types/mocha": "^9.0.0",
+        "chai": "^4.3.4",
+        "mocha": "^10.0.0",
+        "prettier": "^2.7.1",
+        "ts-mocha": "^10.0.0",
+        "typescript": "^4.7.4"
+    }
+}

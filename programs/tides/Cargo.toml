@@ -1,0 +1,35 @@
+[package]
+name = "tides"
+version = "0.1.0"
+description = ""
+edition = "2021"
+rust-version = "1.56"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "tides"
+
+[features]
+init-if-needed = []
+no-entrypoint = []
+no-idl = []
+cpi = ["no-entrypoint"]
+default = []
+
+[profile.release]
+overflow-checks = true
+
+[dependencies]
+anchor-lang = { version="0.25.0", features = ["init-if-needed"] }
+anchor-spl = "0.25.0"
+solana-program = "1.9.15"
+spl-token = { version = "3.3.0", features = ["no-entrypoint"] }
+pyth-sdk-solana = "0.4.2"
+uint = { version = "0.9.1", default-features = false }
+num-traits = "0.2"
+num-derive = "0.3"
+thiserror = "1.0"
+num-integer = "0.1.44"
+borsh = "0.9.1"
+bytemuck = { version = "1.4.0" }
+rust_decimal = { version = "1.25.0", features = ["maths"] }

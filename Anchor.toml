@@ -1,0 +1,13 @@
+[programs.localnet]
+tides = "tides1eCHZZ1wTJpFz3NbeGmN6hbNSeB1cwcTuar22w"
+pyth = "ASfdvRMCan2aoWtbDi5HLXhz2CFfgEkuDoxc57bJLKLX"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
